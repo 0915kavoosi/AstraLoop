@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NovaLoop | نواحلقه</title>
+<link rel="stylesheet" href="./css/style.css">
+<!-- ============================================================
+     1. FONTS
+============================================================ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- ============================================================
+     2. STYLES
+============================================================ -->
+
+</head>
+<body>
+
+<!-- ============================================================
+     3. LANDING PAGE MARKUP
+============================================================ -->
+<section id="landing">
+  <canvas id="starCanvas"></canvas>
+  <div class="landing-inner">
+    <div class="eyebrow">یک شبیه‌ساز گرانش و کاوش فضایی</div>
+    <h1 class="title">NovaLoop</h1>
+    <p class="subtitle-fa">
+      یک منظومهٔ کوچک بساز، سیاره‌ها را رها کن تا زیر نیروی <b>گرانش واقعی</b> به دور خورشید بچرخند،
+      اجسام را به هم بکوب، سیاه‌چاله بساز — و پیش از فروپاشی خورشید در پایان هر <b>حلقهٔ زمانی</b>،
+      بقایای تمدنی گمشده را کشف کن.
+    </p>
+    <button id="enterBtn">🚀 ورود به فضا</button>
+    <div class="hint">کلیک: ساخت سیاره &nbsp;·&nbsp; کشیدن: پرتاب شهاب‌سنگ &nbsp;·&nbsp; درگ روی صفحه: چرخش دوربین</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     4. GAME SHELL MARKUP
+============================================================ -->
+<section id="game">
+  <canvas id="gameCanvas"></canvas>
+
+  <div id="hud-top">
+    <button id="backBtn">→ بازگشت</button>
+    <div style="display:flex; gap:10px;">
+      <div class="hud-chip"><span id="loopRing"></span> حلقه <b id="loopCount">۱</b></div>
+      <div class="hud-chip">⏳ <b id="loopTimer">03:00</b></div>
+      <div class="hud-chip">📖 کدکس <b id="codexCount">0/12</b></div>
+    </div>
+  </div>
+
+  <div id="infoPanel">
+    <h3 id="infoName">—</h3>
+    <div class="kind" id="infoKind">—</div>
+    <div class="stat-row"><span>جرم</span><b id="infoMass">—</b></div>
+    <div class="stat-row"><span>سرعت مداری</span><b id="infoVel">—</b></div>
+    <div class="stat-row"><span>فاصله از خورشید</span><b id="infoDist">—</b></div>
+    <div class="lore" id="infoLore"></div>
+    <button class="destroy-btn" id="destroyBtn">💥 نابود کردن این جرم</button>
+  </div>
+
+  <div id="codexPanel">
+    <h3>کدکس کاوش — قطعات کشف‌شده</h3>
+    <div id="codexList"><div class="empty">هنوز چیزی کشف نشده. روی یک سیاره کلیک کن.</div></div>
+  </div>
+
+  <div id="toolbar">
+    <button class="tool-btn active" id="toolSelect" title="انتخاب/کاوش"><span class="ic">🖱️</span>انتخاب</button>
+    <button class="tool-btn" id="toolPlanet" title="افزودن سیاره"><span class="ic">🪐</span>سیاره</button>
+    <button class="tool-btn" id="toolComet" title="پرتاب شهاب (درگ کن)"><span class="ic">☄️</span>شهاب</button>
+    <button class="tool-btn" id="toolHole" title="افزودن سیاه‌چاله"><span class="ic">⚫</span>سیاه‌چاله</button>
+    <div class="tool-sep"></div>
+    <button class="tool-btn" id="toolPause"><span class="ic">⏸️</span>توقف</button>
+    <button class="tool-btn" id="toolReset"><span class="ic">🔄</span>ری‌ست</button>
+  </div>
+
+  <div id="toast">
+    <div class="big">☀️ ابرنواختر رخ داد</div>
+    <div class="small">دانش تو باقی می‌ماند — حلقهٔ بعدی آغاز شد</div>
+  </div>
+</section>
+
+<div id="flash"></div>
+
+<!-- ============================================================
+     5. LIBRARIES
+============================================================ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<!-- ============================================================
+     6. APPLICATION SCRIPT
+============================================================ -->
+<script src="./js/script.js"></script>
+</body>
+</html>
